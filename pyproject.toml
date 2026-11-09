@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pricesens"
+version = "1.0.0"
+description = "Выявление ценозависимых клиентов АЗС и оценка удерживающих механик (Intelligence Cup, кейс «Эластичность спроса»)"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24", "pandas>=2.0", "scipy>=1.10", "matplotlib>=3.7", "openpyxl>=3.1"]
+
+[project.optional-dependencies]
+xlsb = ["pyxlsb>=1.0.10"]
+
+[project.scripts]
+pricesens = "pricesens.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
